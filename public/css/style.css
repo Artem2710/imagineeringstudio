@@ -1,0 +1,24 @@
+.category{
+    border-left: 1px solid black;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+.category>button{
+    display: inline-block;
+    margin-right: 5px;
+}
+.category>form{
+    display: inline-block;
+    margin-right: 5px;
+}
+.modal-title{
+    text-align: center;
+}
+.close>span{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.input{
+    margin-bottom: 10px;
+}
