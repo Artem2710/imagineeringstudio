@@ -21,12 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('categories', 'CategoryController@index')->name('categories');
 
-
-//Route::put('categories', 'CategoryController@edit')->name('categoryEdit');
-Route::put('categories/{category}', 'CategoryController@edit')->name('events.update');
-
-Route::get('categories/{category}/edit', 'CategoryController@update')->name('events.edit');
-
+Route::put('categories/{category}', 'CategoryController@edit')->name('categoryUpdate');
 
 Route::delete('categories/{category}', 'CategoryController@delete')->name('deleteCategory');
+
 Route::post('categories', 'CategoryController@createCategory')->name('createCategory');

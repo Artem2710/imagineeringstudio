@@ -53,7 +53,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="{{route('events.update', ['category' => $category])}}">
+                                <form method="post" action="{{route('categoryUpdate', ['category' => $category])}}">
                                     <input type="hidden" name="_method" value="PUT"/>
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="input">
@@ -67,5 +67,6 @@
                 </div>
             </div>
         @endforeach
+        {{ $categories->links() }}
     </div>
 @endsection

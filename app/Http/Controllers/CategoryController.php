@@ -7,12 +7,19 @@ use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(3);
         return view('category.categories')->with('categories', $categories);
     }
 
+    /**
+     * @param CategoryRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function createCategory(CategoryRequest $request)
     {
         $category = new Category();
@@ -21,14 +28,11 @@ class CategoryController extends Controller
         return redirect(route('categories'));
     }
 
-    public function update(Category $category)
-    {
-
-        return view('edit', [
-            'category' => $category,
-        ]);
-    }
-
+    /**
+     * @param Category $category
+     * @param CategoryRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function edit(Category $category, CategoryRequest $request)
     {
 
@@ -37,6 +41,10 @@ class CategoryController extends Controller
         return redirect(route('categories'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete($id)
     {
         $category = Category::find($id);
