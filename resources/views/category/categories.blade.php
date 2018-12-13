@@ -30,7 +30,7 @@
         </div>
         @foreach($categories as $category)
             <div class="category">
-                <a href=""><h4>{{$category->name}}</h4></a>
+                <a href="/categories/{{$category->id}}"><h4>{{$category->name}}</h4></a>
 
                 <form method="post"
                       action="{{route('deleteCategory', ['id' => $category->id])}}">

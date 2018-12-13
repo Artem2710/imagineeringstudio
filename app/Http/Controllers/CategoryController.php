@@ -35,7 +35,6 @@ class CategoryController extends Controller
      */
     public function edit(Category $category, CategoryRequest $request)
     {
-
         $category->fill($request->all());
         $category->update();
         return redirect(route('categories'));

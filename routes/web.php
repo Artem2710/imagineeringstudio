@@ -26,3 +26,8 @@ Route::put('categories/{category}', 'CategoryController@edit')->name('categoryUp
 Route::delete('categories/{category}', 'CategoryController@delete')->name('deleteCategory');
 
 Route::post('categories', 'CategoryController@createCategory')->name('createCategory');
+
+
+Route::get('categories/{category}', 'ProductController@index')->name('products');
+//Route::get('categories/{category}', 'CategoryController@product')->name('products');
+
